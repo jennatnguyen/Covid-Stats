@@ -197,7 +197,7 @@ public class AllCovidStats {
 /*******************************************************************************/
 	
 	public void sortByDeath() {
-		//using insertion sort, courtesy of zybooks
+		//using insertion sort
 		
 		//variables:
 		int i;
