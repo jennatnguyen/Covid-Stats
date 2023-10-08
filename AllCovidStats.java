@@ -177,60 +177,22 @@ public class AllCovidStats {
 	
 /*******************************************************************************/
 	public void sortByStateName() {
-		/* I was trying to do this but I honestly just can't get it and the assignment is already late and my other sorting 
-		  methods work so this method is incomplete
-		 */
-	//using insertion sort
-		
-				//variables:
-				int i;
-				int j;
-				StateCovidStats temp = new StateCovidStats();     
+	    int n = stateList.size();
 
-				      for (i = 1; i < stateList.size(); ++i) {
-				         j = i;
-				         
-				         // sort states by name
-				         // stopping once i in the correct position
+	    for (int i = 1; i < n; i++) {
+	        StateCovidStats key = stateList.get(i);
+	        int j = i - 1;
 
-				         //compare the first letter
-				         while (j > 0 && stateList.get(j).getStateName().charAt(0)
-				        		 > stateList.get(j - 1).getStateName().charAt(0) ) {
-				        	 
-				        	 //if they are equal compare the following characters
-				        	 if (stateList.get(j).getStateName().charAt(0) == stateList.get(j - 1).getStateName().charAt(0)) {
-				        		 
-				        		 //stop until letters don't match
-			        			 while (stateList.get(j).getStateName().charAt(0) != stateList.get(j - 1).getStateName().charAt(0)) {
-			        				 
-			        				
-			        			 }
-			        		 }
-				        	 
-				        	 else {
-				        	 // set temp to j
-				            temp.setStateName(stateList.get(j).getStateName() ); 
-				            temp.setCases(stateList.get(j).getCases() ); 
-				            temp.setDeaths(stateList.get(j).getDeaths() ); 
-				            
-				            // set j to j - 1
-				            stateList.get(j).setStateName(stateList.get(j - 1).getStateName()); 
-				            stateList.get(j).setCases(stateList.get(j - 1).getCases()); 
-				            stateList.get(j).setDeaths(stateList.get(j - 1).getDeaths()); 
-				            
-				           // set j - 1 to temp
-				            stateList.get(j-1).setStateName( temp.getStateName()); 
-				            stateList.get(j-1).setCases( temp.getCases()); 
-				            stateList.get(j-1).setDeaths( temp.getDeaths()); 
-				            
-				            --j;
-				        	 }//end of else
-				            
-				         }// end while
-				         
-				      }//end for */
-		
-	} 
+	        // Compare state names and swap if needed
+	        while (j >= 0 && stateList.get(j).getStateName().compareTo(key.getStateName()) > 0) {
+	            stateList.set(j + 1, stateList.get(j));
+	            j = j - 1;
+	        }
+
+	        stateList.set(j + 1, key);
+	    }
+	}
+
 	
 /*******************************************************************************/
 	
