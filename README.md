@@ -14,4 +14,7 @@ In this project, I specifically used a CSV file that contained 2021 COVID-19 sta
 - Implemented sorting algorithms to display states with the highest and lowest cases and deaths.
 - Calculated and displayed average cases and deaths for an informative overview.
 
-# Technologies Used: Java, CSV data parsing, data sorting algorithms.
+# Technologies Used: 
+- Java
+- CSV data parsing
+-  data sorting algorithms.
